@@ -1,0 +1,21 @@
+* {
+    margin-inline: auto;
+    text-align: center;
+}
+
+
+.box {
+    border-style: solid;
+    transition: all 0.4s ease;
+}
+
+.controls {
+    margin-top: 20px;
+    margin-inline: auto;
+}
+.control {
+    text-align: right;
+}
+input {
+    text-align: left;
+}
