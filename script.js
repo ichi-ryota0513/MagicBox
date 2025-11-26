@@ -1,23 +1,21 @@
+//　Boxのスタイル変更
 const box = document.querySelector('.box');
 const propInputs = document.querySelectorAll('input[data-prop]');
 const bgInputs = document.querySelectorAll('input[data-bg]');
 const resetButton = document.querySelector('.layout button');
 
-// 初期値を保存
 const initialProp = {};
 propInputs.forEach(input => {
   initialProp[input.dataset.prop] = input.value;
 });
 const initialBg = Array.from(bgInputs).map(input => input.value);
 
-// transform用 rotate 初期値
 let currentRotate = initialProp.rotate || '0deg';
 
-// 背景を更新する関数
 function updateBackground() {
   const colors = Array.from(bgInputs)
                       .map(input => input.value)
-                      .filter(val => val); // 空欄は無視
+                      .filter(val => val);
   if (colors.length === 0) return;
 
   if (colors.length === 1) {
@@ -29,7 +27,6 @@ function updateBackground() {
   }
 }
 
-// プロパティ入力が変わったら反映
 propInputs.forEach(input => {
   input.addEventListener('input', () => {
     const prop = input.dataset.prop;
@@ -44,10 +41,8 @@ propInputs.forEach(input => {
   });
 });
 
-// 背景入力が変わったら反映
 bgInputs.forEach(input => input.addEventListener('input', updateBackground));
 
-// 初期値反映
 updateBackground();
 if (currentRotate) box.style.transform = `rotate(${currentRotate})`;
 propInputs.forEach(input => {
@@ -56,9 +51,9 @@ propInputs.forEach(input => {
   }
 });
 
+
 // リセットボタン
 resetButton.addEventListener('click', () => {
-  // プロパティ
   propInputs.forEach(input => {
     const prop = input.dataset.prop;
     input.value = initialProp[prop];
@@ -69,8 +64,39 @@ resetButton.addEventListener('click', () => {
       box.style[prop] = input.value;
     }
   });
-
-  // 背景
   bgInputs.forEach((input, i) => input.value = initialBg[i]);
   updateBackground();
 });
+
+
+// ラベルの英語・日本語切り替え
+const labelTexts = [
+  { english: 'width', japanese: '幅' },
+  { english: 'height', japanese: '高さ' },
+  { english: 'box-shadow', japanese: '影' },
+  { english: 'background-color', japanese: '背景色' },
+  { english: 'background-color', japanese: '背景色' },
+  { english: 'background-color', japanese: '背景色' },
+  { english: 'border-radius', japanese: '角丸' },
+  { english: 'border-color', japanese: '境界線の色' },
+  { english: 'border-width', japanese: '境界線の太さ' },
+  { english: 'opacity', japanese: '不透明度' },
+  { english: 'rotate', japanese: '回転' },
+  { english: 'reset', japanese: 'リセット' }
+];
+
+const labels = document.querySelectorAll('.control label');
+let showEnglish = true;
+
+setInterval(() => {
+  labels.forEach((label, i) => {
+    if (labelTexts[i]) {
+      label.style.opacity = 0;
+      setTimeout(() => {
+        label.textContent = showEnglish ? labelTexts[i].english : labelTexts[i].japanese;
+        label.style.opacity = 1;
+      }, 250);
+    }
+  });
+  showEnglish = !showEnglish;
+}, 3000);
