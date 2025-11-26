@@ -3,39 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>magic</title>
+    <title>Magic Box</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
-    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
     <link rel="shortcut icon" href="/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
     <meta name="apple-mobile-web-app-title" content="MyWebSite" />
-    <link rel="manifest" href="/favicon/site.webmanifest" />
 </head>
 <body>
     <div class="box"></div>
-    <div class="controls">
-        <label>width：</label>
-        <input type="text" data-prop="width" value="200px"/><br>
+    <div class="layout">
+        <div class="controls">
+            <div class="control">
+                <label>width</label><br>
+                <input type="text" data-prop="width" value="200px"/>
+            </div>
+            <div class="control">
+                <label>height</label><br>
+                <input type="text" data-prop="height" value="200px"/>
+            </div>
+            <div class="control">
+                <label>box-shadow</label><br>
+                <input type="text" data-prop="boxShadow" value="5px 5px 10px #000000"/>
+            </div> 
+        </div>
 
-        <label>height：</label>
-        <input type="text" data-prop="height" value="200px"/><br>
+        <div class="controls">
+            <div class="control">
+                <label>background-color</label><br>
+                <input type="text" data-bg="1" value="#FFFFFF"/>
+            </div>
+            <div class="control">
+                <label>background-color</label><br>
+                <input type="text" data-bg="2" value=""/>
+            </div>
+            <div class="control">
+                <label>background-color</label><br>
+                <input type="text" data-bg="3" value=""/>
+            </div>
+        </div>
 
-        <label>background-color：</label>
-        <input type="text" data-prop="backgroundColor" value="#FFFFFF"/><br>
+        <div class="controls">
+            <div class="control">
+                <label>border-radius</label><br>
+                <input type="text" data-prop="borderRadius" value="20px"/>
+            </div>            
+            <div class="control">
+                <label>border-color</label><br>
+                <input type="text" data-prop="borderColor" value="#000000"/>
+            </div>            
+            <div class="control">
+                <label>border-width</label><br>
+                <input type="text" data-prop="borderWidth" value="1px"/>
+            </div>
+        </div>
 
-        <label>border-radius：</label>
-        <input type="text" data-prop="borderRadius" value="20px"/><br>
-
-        <label>border-color：</label>
-        <input type="text" data-prop="borderColor" value="#000000"/><br>
-
-        <label>border-width：</label>
-        <input type="text" data-prop="borderWidth" value="1px"/><br>
-
-        <label>box-shadow：</label>
-        <input type="text" data-prop="boxShadow" value="5px 5px 10px #000000"/><br>
+        <div class="controls">
+            <div class="control">
+                <label>opacity</label><br>
+                <input type="text" data-prop="opacity" value="1"/>
+            </div>            
+            <div class="control">
+                <label>rotate</label><br>
+                <input type="text" data-prop="rotate" value="0deg"/>
+            </div>           
+            <button>リセット</button>
+        </div>
     </div>
 </body>
 </html>
