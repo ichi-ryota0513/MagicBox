@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>help - Magic Box</title>
+  <link rel="stylesheet" href="help.css">
+  <script defer src="script.js"></script>
+  <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="favicon/site.webmanifest" />
+  <meta name="apple-mobile-web-app-title" content="MagicBox" />
+</head>
+<body>
+  <h1 class="page-title">MagicBoxの使い方</h1>
+
+    <section>
+      <h2 class="section-title">width（横幅）</h2>
+
+      <p class="section-text">Boxの横幅を指定できます。主に使用できる単位はpx、%、vwなどがあります。</p>
+
+      <h3 class="subsection-title">「px」</h3>
+      <p class="section-text">横幅が入力したピクセル数になります。</p>
+
+      <h3 class="subsection-title">「%」、「vw」</h3>
+      <p class="section-text">%は親要素、vwは画面の横幅（ビューポート）に対する割合になります
+        MagicBoxは親要素がbody要素となるため、%とvwは同じような挙動をします。</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">height（縦幅）</h2>
+
+      <p class="section-text">Boxの縦幅を指定できます。主に使用できる単位はpx、%、vhなどがあります。</p>
+
+      <h3 class="subsection-title">「px」</h3>
+      <p class="section-text">縦幅が入力したピクセル数になります。</p>
+
+      <h3 class="subsection-title">「%」、「vh」</h3>
+      <p class="section-text">%は親要素、vwは画面の縦幅（ビューポート）に対する割合になります。
+        ※MagicBoxでは%は使用できません。</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">box-shadow（影）</h2>
+
+      <p class="section-text">Boxの影の付け方を指定できます。</p>
+
+      <h3 class="subsection-title">使い方</h3>
+      <p class="section-text">[左右の向きpx, 上下の向きpx, ぼかしpx, 色;]と指定します。</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">background-color（背景色）</h2>
+
+      <p class="section-text">背景の色を指定できます。</p>
+      
+      <h3 class="subsection-title">色の指定方法</h3>
+      <p class="section-text">「red」や「blue」のような色の名前で指定できます。
+        「#FFFFFF」のようなカラーコードでも指定できます。</p>
+
+      <h3 class="subsection-title">グラデーション</h3>
+      <p class="section-text">2つ背景色を指定するとグラデーションすることができます。</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">angle（角度）</h2>
+
+      <p class="section-text">グラデーションの角度を指定できます。
+        単位の「deg」は'degree'の略で、「度」と同じ意味です。
+        他にも「rad」（ラジアン）や「turn」（回転数）で指定することもできます。</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">border-radius（角丸）</h2>
+
+      <p class="section-text">角の丸みを指定できます。主に使用できる単位はpxと%です。
+        空白区切りで複数指定することもできます。</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">border-color（境界線の色）</h2>
+
+      <p class="section-text">境界線の色を指定できます。</p>
+
+      <h3 class="subsection-title">色の指定方法</h3>
+      <p class="section-text">「red」や「blue」のような色の名前で指定できます。
+        「#FFFFFF」のようなカラーコードでも指定できます。</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">border-width（境界線の太さ）</h2>
+      <p class="section-text">境界線の太さを指定できます。</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">opacity（不透明度）</h2>
+      <p class="section-text">不透明度を指定できます。
+        「1」を指定すると不透明に、「0」を指定すると透明になります。</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">rotate（回転）</h2>
+      <p class="section-text">図形の角度を指定できます。
+        単位の「deg」は'degree'の略で、「度」と同じ意味です。
+        他にも「rad」（ラジアン）や「turn」（回転数）で指定することもできます。</p>
+    </section>
+</body>
+</html>

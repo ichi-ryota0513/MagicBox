@@ -13,19 +13,34 @@ const initialBg = Array.from(bgInputs).map(input => input.value);
 let currentRotate = initialProp.rotate || '0deg';
 
 function updateBackground() {
-  const colors = Array.from(bgInputs)
-                      .map(input => input.value)
-                      .filter(val => val);
-  if (colors.length === 0) return;
+  const color1 = bgInputs[0].value;
+  const color2 = bgInputs[1].value;
+  const angle = bgInputs[2].value;  // デフォルト角度
 
-  if (colors.length === 1) {
+  // 色がないときは何もしない
+  if (!color1 && !color2) {
     box.style.backgroundImage = '';
-    box.style.backgroundColor = colors[0];
-  } else {
     box.style.backgroundColor = '';
-    box.style.backgroundImage = `linear-gradient(to right, ${colors.join(', ')})`;
+    return;
   }
+
+  // 色が1つだけのときは単色
+  if (color1 && !color2) {
+    box.style.backgroundImage = '';
+    box.style.backgroundColor = color1;
+    return;
+  }
+  if (!color1 && color2) {
+    box.style.backgroundImage = '';
+    box.style.backgroundColor = color2;
+    return;
+  }
+
+  // 色が2つ → グラデーション
+  box.style.backgroundColor = '';
+  box.style.backgroundImage = `linear-gradient(${angle}, ${color1}, ${color2})`;
 }
+
 
 propInputs.forEach(input => {
   input.addEventListener('input', () => {
@@ -76,13 +91,14 @@ const labelTexts = [
   { english: 'box-shadow', japanese: '影' },
   { english: 'background-color', japanese: '背景色' },
   { english: 'background-color', japanese: '背景色' },
-  { english: 'background-color', japanese: '背景色' },
+  { english: 'angle', japanese: '角度' },
   { english: 'border-radius', japanese: '角丸' },
   { english: 'border-color', japanese: '境界線の色' },
   { english: 'border-width', japanese: '境界線の太さ' },
   { english: 'opacity', japanese: '不透明度' },
   { english: 'rotate', japanese: '回転' },
-  { english: 'reset', japanese: 'リセット' }
+  { english: 'reset', japanese: 'リセット' },
+  { english: 'help', japanese: 'ヘルプ' }
 ];
 
 const labels = document.querySelectorAll('.control label');
